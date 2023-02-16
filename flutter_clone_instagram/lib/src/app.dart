@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'components/image_data.dart';
 import 'controller/bottom_nav_controller.dart';
 import 'pages/home.dart';
+import 'pages/search.dart';
 
 class App extends GetView<BottomNavController> {
   const App({super.key});
@@ -13,12 +14,12 @@ class App extends GetView<BottomNavController> {
     return WillPopScope(
       child: Obx(
         () => Scaffold(
-          appBar: AppBar(),
+          // appBar: AppBar(),
           body: IndexedStack(
             index: controller.pageIndex.value,
             children: [
-              const Home(),
-              Container(child: Center(child: Text('SEARCH'))),
+              // const Home(),
+              const Search(),
               Container(child: Center(child: Text('UPLOAD'))),
               Container(child: Center(child: Text('ACTIVITY'))),
               Container(child: Center(child: Text('MYPAGE'))),
