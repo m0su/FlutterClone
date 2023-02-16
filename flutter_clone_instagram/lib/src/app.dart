@@ -12,13 +12,13 @@ class App extends GetView<BottomNavController> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
+      onWillPop: controller.willPopAction,
       child: Obx(
         () => Scaffold(
-          // appBar: AppBar(),
           body: IndexedStack(
             index: controller.pageIndex.value,
             children: [
-              // const Home(),
+              const Home(),
               const Search(),
               Container(child: Center(child: Text('UPLOAD'))),
               Container(child: Center(child: Text('ACTIVITY'))),
@@ -65,7 +65,6 @@ class App extends GetView<BottomNavController> {
           ),
         ),
       ),
-      onWillPop: controller.willPopAction,
     );
   }
 }
