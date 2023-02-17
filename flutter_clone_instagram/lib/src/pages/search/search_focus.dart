@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clone_instagram/src/components/image_data.dart';
+import 'package:flutter_clone_instagram/src/controller/bottom_nav_controller.dart';
 import 'package:get/get.dart';
 
 class SearchFocus extends StatefulWidget {
@@ -78,7 +79,11 @@ class _SearchFocusState extends State<SearchFocus>
       appBar: AppBar(
         elevation: 0,
         leading: GestureDetector(
-          onTap: Get.back,
+          onTap: BottomNavController.to.willPopAction,
+          // onTap: Get.back,
+          // onTap: () {
+          // Get.find<BottomNavController>().willPopAction();
+          // },
           child: Padding(
             padding: const EdgeInsets.all(15),
             child: ImageData(IconsPath.backBtnIcon),
